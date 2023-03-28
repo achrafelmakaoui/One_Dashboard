@@ -1,0 +1,100 @@
+
+@font-face {
+  font-family: "GilroyMedium";
+  src: url("../fonts/Gilroy-Medium.ttf");
+
+}
+@font-face {
+  font-family: "GilroySemiBold";
+  src: url("../fonts/Gilroy-SemiBold.ttf");
+}
+@font-face {
+font-family: "Myriad Semibold";
+src: url("../fonts/MYRIADPRO-SEMIBOLD.woff") format("woff");
+}
+
+@font-face {
+font-family: "Myriad Bold";
+src: url("../fonts/MYRIADPRO-BOLD.woff") format("woff");
+}
+@font-face {
+font-family: "Myriad Bold Italic";
+src: url("../fonts//MYRIADPRO-BOLDIT.woff") format("woff");
+}
+@font-face {
+font-family: "Gruppo";
+src: url("../fonts/Gruppo-Regular.ttf");
+}
+@font-face {
+  font-family: "Futura";
+  src: url("../fonts/futur.ttf");
+}
+@font-face {
+  font-family: "Futura bold italic";
+  src: url("../fonts/Futura\ Bold\ Italic\ font.ttf");
+}
+@font-face {
+  font-family: "Futura bold";
+  src: url("../fonts/Futura\ Bold\ font.ttf");
+}
+@font-face {
+  font-family: "Futura Medium";
+  src: url("../fonts/Futura\ Medium\ Italic\ font.ttf");
+}
+nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 65px;
+  background: #ffffff;
+  position: fixed;
+  right: 0;
+  left: 0;
+}
+nav .mins{
+  right: 0;
+  top: 0;
+  margin-bottom: 9px;
+
+}
+nav .logo img{
+  width: 270px;
+}
+nav .mrc{
+  width: 320px;
+  height: 70px;
+}
+nav .logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nav-links{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+.nav-links li{
+  list-style-type: none;
+  margin: 40px;
+}
+.nav-links a{
+  text-decoration: none;
+  color: #5e92df;
+  transition: 0.3s ease;
+  font-family: 'Futura Medium';
+  font-size: 18px;
+  transition: 0.5s;
+}
+.nav-links a:hover{
+  color: #376DBD;
+}
+.hr{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #376DBD;
+  margin-top: -10px;
+  width: 10%;
+}

@@ -1,0 +1,15 @@
+.Cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 140px 125px 0px 125px;
+}
+.parentContainer{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
