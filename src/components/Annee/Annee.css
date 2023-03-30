@@ -1,0 +1,14 @@
+
+@font-face {
+    font-family: "Myriad Bold Italic";
+    src: url("../../fonts/MYRIADPRO-BOLDIT.woff") format("woff");
+}
+
+.anneedas{
+  
+    margin-bottom: 2%;
+    font-family: 'Myriad Bold Italic';        
+    color: #5a89d0;
+ 
+    
+}

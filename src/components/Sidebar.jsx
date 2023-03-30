@@ -20,17 +20,16 @@ const Sidebar = () => {
                 <Link to="Tables">Tables</Link>
             </li>
             <li>
-                <Link to="Analytics">Analytics</Link>
+                <Link to="Data">Data</Link>
             </li>
             <li>
-                <Link to="Customers">Customers</Link>
+                <Link to="Analytics">Analytics</Link>
             </li>
         </ul>
         <div className="mins">
             <img src={Mrc} className='mrc' alt=''/>
         </div>
     </nav>
-    <hr className="hr"/>
     </>
   );
 };

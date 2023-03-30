@@ -1,0 +1,230 @@
+
+@font-face {
+    font-family: "GilroyMedium";
+    src: url("../../fonts/Gilroy-Medium.ttf");
+  
+  }
+  @font-face {
+    font-family: "GilroySemiBold";
+    src: url("../../fonts/Gilroy-SemiBold.ttf");
+  }
+  @font-face {
+  font-family: "Myriad Semibold";
+  src: url("../../fonts/MYRIADPRO-SEMIBOLD.woff") format("woff");
+  }
+  
+  @font-face {
+  font-family: "Myriad Bold";
+  src: url("../../fonts/MYRIADPRO-BOLD.woff") format("woff");
+  }
+  @font-face {
+  font-family: "Myriad Bold Italic";
+  src: url("../../fonts/MYRIADPRO-BOLDIT.woff") format("woff");
+  }
+  @font-face {
+  font-family: "Gruppo";
+  src: url("../../fonts/Gruppo-Regular.ttf");
+  }
+  @font-face {
+    font-family: "Futura";
+    src: url("../../fonts/futur.ttf");
+  }
+  @font-face {
+    font-family: "Futura bold italic";
+    src: url("../../fonts/Futura\ Bold\ Italic\ font.ttf");
+  }
+  @font-face {
+    font-family: "Futura bold";
+    src: url("../../fonts/Futura\ Bold\ font.ttf");
+  }
+  @font-face {
+    font-family: "Futura Medium italic";
+    src: url("../../fonts/Futura\ Medium\ Italic\ font.ttf");
+  }
+  @font-face {
+    font-family: "Futura Medium";
+    src: url("../../fonts/futura\ medium\ bt.ttf");
+  }
+
+.Login{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.LoginDS{
+    width: 50%;
+    height: 100%;
+    background: #376DBD;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.LoginDS .LoginImg{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    left: 0;
+    right: 0;
+    top: 50%;
+    translate: 20% 0%;
+}
+
+.LoginDS .LoginImg img{
+    width: 50%;
+    filter: drop-shadow(0px 20px 10px rgba(0, 0, 0, 0.398));
+    animation-name: floating;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    padding: 20px;
+}
+
+@keyframes floating {
+    from { transform: translate(0,  0px);
+     }
+    65%  { transform: translate(0, 15px);}
+    to   { transform: translate(0, -0px); }
+}
+
+.LoginDS .LoginImg h1{
+    color: rgb(255, 255, 255);
+    margin-left: 100px;
+    font-family: 'Myriad Bold Italic';
+}
+.LoginDS .LoginImg p{
+    color: rgba(255, 255, 255, 0.747);
+    margin-left: 30px;
+    font-family: 'GilroyMedium';
+    width: 50%;
+    text-align: center;
+}
+.LoginDiv{
+    width: 50%;
+    height: 100%;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.LoginDiv .LoginInfo{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+.LoginDiv .LoginInfo .imglg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    
+}
+.LoginDiv .LoginInfo .imglg img{
+    width: 20%;
+    height: 20%;
+}
+
+.LoginDiv .LoginInfo h1{
+    color: #376DBD;
+    font-family: 'Myriad Bold Italic';
+    text-align: center;
+}
+
+.LoginDiv .LoginInfo p{
+    color: #4578c5b4;
+    font-family: 'GilroyMedium';
+    text-align: center;
+    margin-left: 210px;
+    width: 50%;
+}
+
+  button,
+  .inputLg {
+    border: 0;
+    width: 100%;
+    height: 60px;
+    background: transparent;
+    font-family: inherit;
+    font-size: 16px;
+    outline: none;
+  }
+  
+  
+ 
+  
+
+  
+  .formulaire{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+  }
+  
+  .textbox {
+    position: relative;
+    margin-bottom: 16px;
+  }
+  
+  .textbox span {
+    color: #4e81ceb0;
+    top: 50%;
+    translate: 0 -200%;
+    left: 0;
+    pointer-events: none;
+  }
+  
+  .textbox .inputLg {
+    padding: 0 24px 0 36px;
+    border-bottom: 2px solid #376DBD;
+    color: #376DBD;
+    height: 72px;
+  }
+  
+  :is(.inputLg:focus, .inputLg:valid) ~ label {
+    translate: -40px -60px;
+    scale: 0.875;
+  }
+  
+  .inputLg:focus ~ label {
+    color: rgb(55, 109, 190);
+  }
+  
+  .inputLg:focus {
+    border-color: #376DBD;
+  }
+  
+  :is(.inputLg:focus, .inputLg:valid) ~ span {
+    color: #376DBD;
+  }
+  
+  .textbox label {
+    position: absolute;
+    top: 50%;
+    left: 36px;
+    translate: 0 -115%;
+    
+    color: rgba(72, 125, 206, 0.714);
+    pointer-events: none;
+    transition: 0.4s;
+  }
+  
+  .formulaire button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    padding: 0 24px;
+    border-radius: 6px;
+    background: #216ce7;
+    color: #f9f9f9;
+    border: 0;
+    font-family: inherit;
+    font-weight: 600;
+  }
+  
+  
+  
+ 

@@ -4,11 +4,11 @@ import './Table.css'
 import FilterListRoundedIcon from '@mui/icons-material/FilterListRounded';
 import FilterListOffRoundedIcon from '@mui/icons-material/FilterListOffRounded';
 import { useRef } from "react";
+import Annee from "../Annee/Annee";
 function FilterData() {
   const [grpStr, setGrpStr] = useState([]);
   const [typeUsage, setTypeUsage] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
-  
   const [MenuState, setMenuState] = useState(false);
   const [MenuState2, setMenuState2] = useState(true);
 
@@ -28,28 +28,60 @@ function FilterData() {
         setMenuState2(true)
     };
    
-
+  
   const handleGrpStrChange = (event) => {
     const selectedValue = event.target.value;
     const isChecked = event.target.checked;
-
+    if (selectedValue === 'DPLAY') {
+      if (isChecked) {
+        setGrpStr(['AGENCE DE SERVICES PROVINCIALE LAAYOUNE','AGENCE DE SERVICES PROVINCIALE TARFAYA', 'AGENCE DE SERVICES PROVINCIALE BOUJDOUR', 'AGENCE DE SERVICES PROVINCIALE ES-SMARA', 'AGENCE DE SERVICES EL MARSA', 'AGENCE DE SERVICES LAAYOUNE EL WIFAQ']);
+      } else {
+        setGrpStr([]);
+      }
+    }else if(selectedValue === 'DPGEL') {
+      if (isChecked) {
+        setGrpStr(['AGENCE DE SERVICES PROVINCIALE GUELMIM','AGENCE DE SERVICES BOUIZAKARNE', 'SUCCURSALE TAGHJIJT', 'AGENCE DE SERVICES PROVINCIALE ASSA ZAG', 'SUCCURSALE ZAG', 'AGENCE DE SERVICES PROVINCIALE SIDI IFNI','SUCCURSALE MIRLEFT','AGENCE DE SERVICES LAKHSSASS','AGENCE DE SERVICES PROVINCIALE TAN TAN','SUCCURSALE TAN TAN PLAGE']);
+      } else {
+        setGrpStr([]);
+      }
+    }
+    else if(selectedValue === 'DPDAK') {
+      if (isChecked) {
+        setGrpStr(['AGENCE DE SERVICES PROVINCIALE DAKHLA','SUCCURSALE BIR GANDOUZ']);
+      } else {
+        setGrpStr([]);
+      }
+    }
+    
+    else{
     if (isChecked) {
       setGrpStr([...grpStr, selectedValue]);
     } else {
       setGrpStr(grpStr.filter((value) => value !== selectedValue));
     }
+  }
   };
 
   const handleTypeUsageChange = (event) => {
     const selectedValue = event.target.value;
     const isChecked = event.target.checked;
-
-    if (isChecked) {
-      setTypeUsage([...typeUsage, selectedValue]);
+    
+    if (selectedValue === 'ALL') {
+      if (isChecked) {
+        setTypeUsage(['MT Général', 'Ménages', 'Patentés', 'Administratif', 'Public', 'Force Motrice Agricole', 'Force Motrice Industrielle']);
+      } else {
+        setTypeUsage([]);
+      }
     } else {
-      setTypeUsage(typeUsage.filter((value) => value !== selectedValue));
+      if (isChecked) {
+        setTypeUsage([...typeUsage, selectedValue]);
+      } else {
+        setTypeUsage(typeUsage.filter((value) => value !== selectedValue));
+      }
     }
   };
+  
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -98,7 +130,15 @@ function FilterData() {
   // }, 0);
   return (
     <div className="tb_ft">
-      <h2>Filter {MenuState && (<FilterListRoundedIcon ref={menu} onClick={closesideMenu} className='filter_icon_on'/>)} {MenuState2 &&(<FilterListOffRoundedIcon  ref={menu} onClick={showhideMenu} className='filter_icon_off'/>)}</h2>
+      <div className="bnfil">
+        <div className="h2filt">
+          <h2>Filter {MenuState && (<FilterListRoundedIcon ref={menu} onClick={closesideMenu} className='filter_icon_on'/>)} {MenuState2 &&(<FilterListOffRoundedIcon  ref={menu} onClick={showhideMenu} className='filter_icon_off'/>)}</h2>
+        </div>
+        <div className="h2anne">
+          <Annee/>
+        </div>
+      </div>
+
         <div className="filter" ref={sidebar}>
           <div className="tp_usg">
             <div className='tp_usag_tit'>
@@ -106,7 +146,7 @@ function FilterData() {
             </div>
             <div className="tp_usag_input">
               <div className="flx">
-                <input type="checkbox" value=" " onChange={handleTypeUsageChange} />
+                <input type="checkbox" value='ALL'  onChange={handleTypeUsageChange} />
                 <label>ALL</label>
               </div>
               <div className="flx">
@@ -145,7 +185,7 @@ function FilterData() {
             </div>
             <div className="grp_str_input">
               <div className="flx">
-                <input type="checkbox" value="" onChange={handleGrpStrChange} />
+                <input type="checkbox" value="DPLAY" onChange={handleGrpStrChange} />
                 <label>ALL</label>
               </div>
               <div className="flx">
@@ -180,7 +220,7 @@ function FilterData() {
             </div>
             <div className="dpgelmim_input">
               <div className="flx">
-                <input type="checkbox" value="" onChange={handleGrpStrChange} />
+                <input type="checkbox" value="DPGEL" onChange={handleGrpStrChange} />
                 <label>ALL</label>
               </div>
               <div className="flx">
@@ -231,7 +271,7 @@ function FilterData() {
             </div>
             <div className="dpdakhla_input">
               <div className="flx">
-                <input type="checkbox" value="" onChange={handleGrpStrChange} />
+                <input type="checkbox" value="DPDAK" onChange={handleGrpStrChange} />
                 <label>ALL</label>
               </div>
               <div className="flx">
@@ -250,28 +290,38 @@ function FilterData() {
       <br/>
       <br/>
       <br/>
-      <table id="tableau" className="table sticky table-bordered ">
+      <table id="tableau" className="table sticky table-striped">
                     <thead>
                         <tr>
-                            <th scope="col" className="text-left">Tension</th>
-                            <th scope="col" className="text-left">Type_usage</th>
-                            <th scope="col" className="text-left">GRP_régio</th>
-                            <th scope="col" className="text-left">NBK12</th>
-                            <th scope="col" className="text-left">NBKPS</th>
-                            <th scope="col" className="text-left">Ecart</th>
-                            <th scope="col" className="text-left">Evo%</th>
-                            <th scope="col" className="text-left">MWH__PS__12</th>
-                            <th scope="col" className="text-left">MWH__PS</th>
-                            <th scope="col" className="text-left">EcartTTTTT</th>
-                            <th scope="col" className="text-left">Evo%</th>
-                            <th scope="col" className="text-left">KDH__PS__12</th>
-                            <th scope="col" className="text-left">KDH__PS</th>
-                            <th scope="col" className="text-left">EcartTTT</th>
-                            <th scope="col" className="text-left">Evo%</th>
-                            <th scope="col" className="text-left">PTF__PS__12</th>
-                            <th scope="col" className="text-left">PTF__PS</th>
-                            <th scope="col" className="text-left">Ecart</th>
-                            <th scope="col" className="text-left">Evo%</th>
+                            <th scope="col" className="text-left" rowSpan='2'style={{ padding:'0px 20px 30px 0px' }} >Tension</th>
+                            <th scope="col" className="text-left" rowSpan='2'style={{ padding:'0px 20px 30px 0px' }} >Type_Usage</th>
+                            <th scope="col" className="text-left" rowSpan='2'style={{ padding:'0px 140px 30px 8px' }}>GSR</th>
+                            <th scope="col" className="text-left" colSpan='4'>Nombre De Client</th>
+                            
+                            <th scope="col" className="text-left" colSpan='4'>MWH</th>
+                            
+                            <th scope="col" className="text-left" colSpan='4'>KDH</th>
+                            
+                            <th scope="col" className="text-left" colSpan='4'>Paratarif KDH</th>
+                            
+                        </tr>
+                        <tr>
+                            <th scope="col" className="text-left" style={{ padding:'0px 27px 8px 10px' }}>PS_12</th>
+                            <th scope="col" className="text-left" style={{ padding:'0px 27px 8px 10px' }}>PS</th>
+                            <th scope="col" className="text-left" style={{ padding:'0px 27px 8px 10px' }}>Ecart</th>
+                            <th scope="col" className="text-left" style={{ padding:'0px 27px 8px 10px' }}>Evo%</th>
+                            <th scope="col" className="text-left" style={{ padding:'0px 27px 8px 10px' }}>PS__12</th>
+                            <th scope="col" className="text-left" style={{ padding:'0px 27px 8px 10px' }}>PS</th>
+                            <th scope="col" className="text-left" style={{ padding:'0px 27px 8px 10px' }}>Ecart</th>
+                            <th scope="col" className="text-left" style={{ padding:'0px 27px 8px 10px' }}>Evo%</th>
+                            <th scope="col" className="text-left" style={{ padding:'0px 27px 8px 10px' }}>PS_12</th>
+                            <th scope="col" className="text-left" style={{ padding:'0px 27px 8px 10px' }}>PS</th>
+                            <th scope="col" className="text-left" style={{ padding:'0px 27px 8px 10px' }}>Ecart</th>
+                            <th scope="col" className="text-left" style={{ padding:'0px 27px 8px 10px' }}>Evo%</th>
+                            <th scope="col" className="text-left" style={{ padding:'0px 27px 8px 10px' }}>PS_12</th>
+                            <th scope="col" className="text-left" style={{ padding:'0px 27px 8px 10px' }}>PS</th>
+                            <th scope="col" className="text-left" style={{ padding:'0px 27px 8px 10px' }}>Ecart</th>
+                            <th scope="col" className="text-left" style={{ padding:'0px 27px 8px 10px' }}>Evo%</th>
                         </tr>
                     </thead>
                     
@@ -352,15 +402,15 @@ function FilterData() {
                   }
                   let typebsmy
                   if(item.type_usage==='MT Général'){
-                    typebsmy='Moyenne Tension'
+                    typebsmy='MT'
                   }else{
-                    typebsmy='Basse Tension'
+                    typebsmy='BT'
                   }
         return(
             <><tr key={index}>
               <td>{typebsmy}</td>
                 <td className="text-left">{item.type_usage}</td>
-                <td className="text-left">{item.groupe_str_régional}</td>
+                <td className="text-left" >{item.groupe_str_régional}</td>
                 <td className="text-left">{(item.NBK_PS_12)}</td>
                 <td className="text-left">{(item.NBK_PS)}</td>
                 <td className="text-left">{ecartNBK}</td>
@@ -369,37 +419,37 @@ function FilterData() {
                   minimumFractionDigits: 2,
                   maximumFractionDigits: 2,
                   useGrouping: true,
-                })} K KWH</td>
+                })}</td>
                 <td className="text-left">{(item.MWH_PS).toLocaleString('fr-FR', {
                   minimumFractionDigits: 2,
                   maximumFractionDigits: 2,
                   useGrouping: true,
-                })} K KWH</td>
-                <td className="text-left">{(ecartMWH)+' K KWH'}</td>
+                })}</td>
+                <td className="text-left">{(ecartMWH)}</td>
                 <td className="text-left">{percentageDiffMWH}</td>
                 <td className="text-left">{(item.KDH_PS_12).toLocaleString('fr-FR', {
                   minimumFractionDigits: 2,
                   maximumFractionDigits: 2,
                   useGrouping: true,
-                })} K MAD</td>
+                })}</td>
                 <td className="text-left">{(item.KDH_PS).toLocaleString('fr-FR', {
                   minimumFractionDigits: 2,
                   maximumFractionDigits: 2,
                   useGrouping: true,
-                })} K MAD</td>
-                <td className="text-left">{(ecartKDH)+' K MAD'}</td>
+                })}</td>
+                <td className="text-left">{(ecartKDH)}</td>
                 <td className="text-left">{percentageDiffKDH}</td>
                 <td className="text-left">{(item.Paratarif_KDH_PS_12).toLocaleString('fr-FR', {
                   minimumFractionDigits: 2,
                   maximumFractionDigits: 2,
                   useGrouping: true,
-                })} K MAD</td>
+                })}</td>
                 <td className="text-left">{(item.Paratarif_KDH_PS).toLocaleString('fr-FR', {
                   minimumFractionDigits: 2,
                   maximumFractionDigits: 2,
                   useGrouping: true,
-                })} K MAD</td>
-                <td className="text-left">{(ecartPTF)+' K MAD'}</td>
+                })}</td>
+                <td className="text-left">{(ecartPTF)}</td>
                 <td className="text-left">{percentageDiffPTF}</td>
               </tr>
               </>      
@@ -419,17 +469,17 @@ function FilterData() {
                   minimumFractionDigits: 2,
                   maximumFractionDigits: 2,
                   useGrouping: true,
-                })+' K KWH'}</strong></td>
+                })}</strong></td>
                 <td><strong>{(totalMWH_PS).toLocaleString('fr-FR', {
                   minimumFractionDigits: 2,
                   maximumFractionDigits: 2,
                   useGrouping: true,
-                })+' K KWH'}</strong></td>
+                })}</strong></td>
                 <td><strong>{(totalMWH_PS-totalMWH_PS_12).toLocaleString('fr-FR', {
                   minimumFractionDigits: 2,
                   maximumFractionDigits: 2,
                   useGrouping: true,
-                })+' K KWH'}</strong></td>
+                })}</strong></td>
                 <td><strong>{(((totalMWH_PS-totalMWH_PS_12)/totalMWH_PS_12)*100).toLocaleString('fr-FR', {
                   minimumFractionDigits: 2,
                   maximumFractionDigits: 2,
@@ -439,17 +489,17 @@ function FilterData() {
                   minimumFractionDigits: 2,
                   maximumFractionDigits: 2,
                   useGrouping: true,
-                })+' K MAD'}</strong></td>
+                })}</strong></td>
                 <td><strong>{(totalKDH_PS).toLocaleString('fr-FR', {
                   minimumFractionDigits: 2,
                   maximumFractionDigits: 2,
                   useGrouping: true,
-                })+' K MAD'}</strong></td>
+                })}</strong></td>
                 <td><strong>{(totalKDH_PS-totalKDH_PS_12).toLocaleString('fr-FR', {
                   minimumFractionDigits: 2,
                   maximumFractionDigits: 2,
                   useGrouping: true,
-                })+' K MAD'}</strong></td>
+                })}</strong></td>
                 <td><strong>{(((totalKDH_PS-totalKDH_PS_12)/totalKDH_PS_12)*100).toLocaleString('fr-FR', {
                   minimumFractionDigits: 2,
                   maximumFractionDigits: 2,
@@ -459,17 +509,17 @@ function FilterData() {
                   minimumFractionDigits: 2,
                   maximumFractionDigits: 2,
                   useGrouping: true,
-                })+' K MAD'}</strong></td>
+                })}</strong></td>
                 <td><strong>{(totalPTF_PS).toLocaleString('fr-FR', {
                   minimumFractionDigits: 2,
                   maximumFractionDigits: 2,
                   useGrouping: true,
-                })+' K MAD'}</strong></td>
+                })}</strong></td>
                 <td><strong>{(totalPTF_PS-totalPTF_PS_12).toLocaleString('fr-FR', {
                   minimumFractionDigits: 2,
                   maximumFractionDigits: 2,
                   useGrouping: true,
-                })+' K MAD'}</strong></td>
+                })}</strong></td>
                 <td><strong>{(((totalPTF_PS-totalPTF_PS_12)/totalPTF_PS_12)*100).toLocaleString('fr-FR', {
                   minimumFractionDigits: 2,
                   maximumFractionDigits: 2,

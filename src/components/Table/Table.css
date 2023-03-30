@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Neuton:wght@200;400&display=swap');
 @font-face {
   font-family: "GilroyMedium";
   src: url("../../fonts/Gilroy-Medium.ttf");
@@ -65,12 +65,15 @@ src: url("../../fonts/Gruppo-Regular.ttf");
 }
 
 table tr th{
-  font-size: 14PX;
   color: #376DBD;
+font-family: 'Neuton', serif;
+  font-size: 18px;
+  
 }
 
 table tr td{
-font-size: 11PX;
+font-size: 15PX;
+font-family: 'Neuton', serif;
 }
 table tr:hover{
   background-color: #f5f5f5;
@@ -94,6 +97,7 @@ table thead{
   width: 70%;
   margin-bottom: 307px;
   font-family: 'Futura Medium';
+  
 }
 
 .multiselect{
@@ -104,7 +108,12 @@ table thead{
   padding: 20px 50px 0px 50px;
   margin-bottom: 2%;
 }
-.tb_ft h2{
+.tb_ft .bnfil{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.tb_ft h2{ 
   margin-bottom: 2%;
   font-family: 'Myriad Bold Italic';
   color: #5a89d0;
@@ -139,7 +148,7 @@ table thead{
 
 }
 .filter .tp_usg .tp_usag_tit{
-  color: whitesmoke;
+  color: rgb(255, 255, 255);
   font-family: 'Myriad Bold Italic';
 }
 .filter .tp_usg .tp_usag_input{
@@ -154,7 +163,7 @@ table thead{
 .filter .tp_usg .tp_usag_input label{
   margin: 5px;
   font-family: 'Myriad Bold Italic';
-  color: whitesmoke;
+  color: rgb(255, 255, 255);
 
 }
 .filter .grp_str{
@@ -173,7 +182,7 @@ table thead{
 }
 .filter .grp_str .grp_str_tit{
   font-family: 'Myriad Bold Italic';
-  color: whitesmoke;
+  color: rgb(255, 255, 255);
   
 }
 .filter .grp_str .grp_str_input {
@@ -187,7 +196,7 @@ table thead{
 .filter .grp_str .grp_str_input label{
   margin: 5px;
   font-family: 'Myriad Bold Italic';
-  color: whitesmoke;
+  color: rgb(255, 255, 255);
 
 }
 .filter .dpgelmim{
@@ -206,7 +215,7 @@ table thead{
 }
 .filter .dpgelmim .dpgelmim_tit{
   font-family: 'Myriad Bold Italic';
-  color: whitesmoke;
+  color: rgb(255, 255, 255);
 
 
 }
@@ -219,7 +228,7 @@ table thead{
   margin: 10px;
 }
 .filter .dpgelmim .dpgelmim_input label{
-  color: whitesmoke;
+  color: rgb(255, 255, 255);
   margin: 5px;
   font-family: 'Myriad Bold Italic';
 }
@@ -240,7 +249,7 @@ table thead{
 
 .filter .dpdakhla .dpdakhla_tit{
   font-family: 'Myriad Bold Italic';
-  color: whitesmoke;
+  color: rgb(255, 255, 255);
 }
 .filter .dpdakhla .dpdakhla_input{
   display: flex;
@@ -252,11 +261,11 @@ table thead{
 }
 .filter .dpdakhla .dpdakhla_input label{
   margin: 5px;
-  color: whitesmoke;
+  color: rgb(255, 255, 255);
   font-family: 'Myriad Bold Italic';  
 }
 input[type="checkbox"] {
-  
+  cursor: pointer;
   background-color: transparent;
   border: 1px solid black;
   width: 23px;

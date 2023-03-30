@@ -1,0 +1,88 @@
+@font-face {
+    font-family: "GilroyMedium";
+    src: url("../../fonts/Gilroy-Medium.ttf");
+  
+  }
+  @font-face {
+    font-family: "GilroySemiBold";
+    src: url("../../fonts/Gilroy-SemiBold.ttf");
+  }
+  @font-face {
+  font-family: "Myriad Semibold";
+  src: url("../../fonts/MYRIADPRO-SEMIBOLD.woff") format("woff");
+  }
+  
+  @font-face {
+  font-family: "Myriad Bold";
+  src: url("../../fonts/MYRIADPRO-BOLD.woff") format("woff");
+  }
+  @font-face {
+  font-family: "Myriad Bold Italic";
+  src: url("../../fonts//MYRIADPRO-BOLDIT.woff") format("woff");
+  }
+  @font-face {
+  font-family: "Gruppo";
+  src: url("../../fonts/Gruppo-Regular.ttf");
+  }
+  @font-face {
+    font-family: "Futura";
+    src: url("../../fonts/futur.ttf");
+  }
+  @font-face {
+    font-family: "Futura bold italic";
+    src: url("../../fonts/Futura\ Bold\ Italic\ font.ttf");
+  }
+  @font-face {
+    font-family: "Futura bold";
+    src: url("../../fonts/Futura\ Bold\ font.ttf");
+  }
+  @font-face {
+    font-family: "Futura Medium";
+    src: url("../../fonts/Futura\ Medium\ Italic\ font.ttf");
+  }
+
+.Post_Card{
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 3px dashed #cbd5e0;
+    background-color: #edf2f7;
+    max-width: 380px;
+    min-height: 230px;
+    padding: 0 80px;
+    margin: 0 670px;
+}
+.h3post{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #376DBD;
+    font-family: "Myriad Bold Italic";
+}
+.PostAnnee{
+display: flex;
+flex-direction: column;
+justify-content: flex-start;
+align-items: center;
+}
+.PostAnnee p{
+    font-family: "Myriad Bold Italic";
+    font-weight: bold;
+    font-size: 18px;
+}
+.PostAnnee input{
+    font-family: "GilroyMedium";
+    padding:  3px 10px;
+    margin-bottom: 20px;
+}
+.PostAnnee .btnpost{
+    font-family: "Myriad Bold Italic";
+    background-color: #376DBD;
+    width: 200px;
+    height: 35px;
+    border-radius: 3px;
+    color: whitesmoke;
+    box-shadow: 0px 8px 24px rgba(149, 157, 165, 0.5);
+}

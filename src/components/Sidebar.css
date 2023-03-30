@@ -47,9 +47,8 @@ nav{
   align-items: center;
   height: 65px;
   background: #ffffff;
-  position: fixed;
-  right: 0;
-  left: 0;
+  padding: 0px 0px 0px 17px;
+  
 }
 nav .mins{
   right: 0;

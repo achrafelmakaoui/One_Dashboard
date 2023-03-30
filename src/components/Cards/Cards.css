@@ -3,7 +3,7 @@
   justify-content: center;
   align-items: center;
   gap: 10px;
-  padding: 140px 125px 0px 125px;
+  padding: 190px 125px 0px 125px;
 }
 .parentContainer{
   width: 100%;
@@ -13,3 +13,19 @@
 }
 
 
+
+@media screen and (max-width: 1200px) {
+  .Cards{
+    flex-direction: column;
+  }
+  .parentContainer{
+    height: 9rem;
+  }
+}
+
+@media screen and (max-width: 768px)
+{
+  .Cards{
+    width: 90%;
+  }
+}

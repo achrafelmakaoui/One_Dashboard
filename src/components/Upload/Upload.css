@@ -1,0 +1,81 @@
+@font-face {
+    font-family: "GilroyMedium";
+    src: url("../../fonts/Gilroy-Medium.ttf");
+  
+  }
+  @font-face {
+    font-family: "GilroySemiBold";
+    src: url("../../fonts/Gilroy-SemiBold.ttf");
+  }
+  @font-face {
+  font-family: "Myriad Semibold";
+  src: url("../../fonts/MYRIADPRO-SEMIBOLD.woff") format("woff");
+  }
+  
+  @font-face {
+  font-family: "Myriad Bold";
+  src: url("../../fonts/MYRIADPRO-BOLD.woff") format("woff");
+  }
+  @font-face {
+  font-family: "Myriad Bold Italic";
+  src: url("../../fonts//MYRIADPRO-BOLDIT.woff") format("woff");
+  }
+  @font-face {
+  font-family: "Gruppo";
+  src: url("../../fonts/Gruppo-Regular.ttf");
+  }
+  @font-face {
+    font-family: "Futura";
+    src: url("../../fonts/futur.ttf");
+  }
+  @font-face {
+    font-family: "Futura bold italic";
+    src: url("../../fonts/Futura\ Bold\ Italic\ font.ttf");
+  }
+  @font-face {
+    font-family: "Futura bold";
+    src: url("../../fonts/Futura\ Bold\ font.ttf");
+  }
+  @font-face {
+    font-family: "Futura Medium";
+    src: url("../../fonts/Futura\ Medium\ Italic\ font.ttf");
+  }
+.upload{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 90px;
+}
+
+.one1 .headinfo{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.one1 h3{
+    color: #376DBD;
+    font-family: "Myriad Bold Italic";
+
+}
+.one1 .i{
+  color: #376DBD;
+  width: 2.25em;
+  height: 2.25em;
+}
+.one2 .headinfo{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.one2 h3{
+  font-family: "Myriad Bold Italic";
+  color: #376DBD;
+
+}
+.one2 .i{
+  color: #376DBD;
+  width: 2.25em;
+  height: 2.25em;
+}
