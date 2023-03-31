@@ -5,19 +5,19 @@ import './Button.css'
 import { useState } from 'react'
 import axios from 'axios'
 const Button = () => {
-    const [ data ,setData] = useState(null);
-    const [error, setError] = useState(null);
+    // const [ data ,setData] = useState(null);
+    // const [error, setError] = useState(null);
     const [ AlertErr, setAlertErr]= useState(false)
     const [ AlertSucc, setAlertSucc]= useState(false)
 
   const fetchData = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/one/my-data');
-      setData(response.data);
+      await axios.get('http://localhost:5000/api/one/my-data');
+      // setData(response.data);
       setAlertErr(false)
       setAlertSucc(true)
     } catch (error) {
-      setError(error)
+      // setError(error)
       setAlertErr(true)
       setAlertSucc(false)
     }
