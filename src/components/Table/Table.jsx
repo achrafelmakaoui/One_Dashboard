@@ -118,16 +118,8 @@ function FilterData() {
   const totalKDH_PS = filteredData.reduce((total, doc) => {
     return total + doc.KDH_PS;
   }, 0);
-  const totalPTF_PS_12 = filteredData.reduce((total, doc) => {
-    return total + doc.Paratarif_KDH_PS_12;
-  }, 0);
-  const totalPTF_PS = filteredData.reduce((total, doc) => {
-    return total + doc.Paratarif_KDH_PS;
-  }, 0);
-  // const totalECART_PTF_PS = filteredData.reduce((total, doc) => {
-  //   const ecartptf=(totalPTF_PS-totalPTF_PS_12)
-  //   return total + ecartptf;
-  // }, 0);
+
+
   return (
     <div className="tb_ft">
       <div className="bnfil">
@@ -293,16 +285,15 @@ function FilterData() {
       <table id="tableau" className="table sticky table-striped">
                     <thead>
                         <tr>
-                            <th scope="col" className="text-left" rowSpan='2'style={{ padding:'0px 20px 30px 0px' }} >Tension</th>
-                            <th scope="col" className="text-left" rowSpan='2'style={{ padding:'0px 20px 30px 0px' }} >Type_Usage</th>
-                            <th scope="col" className="text-left" rowSpan='2'style={{ padding:'0px 140px 30px 8px' }}>GSR</th>
+                            <th scope="col" className="text-left" rowSpan='2' style={{ padding:'0px 20px 30px 10px' }} >Tension</th>
+                            <th scope="col" className="text-left" rowSpan='2' style={{ padding:'0px 20px 30px 8px' }} >Type Usage</th>
+                            <th scope="col" className="text-left" rowSpan='2' style={{ padding:'0px 20px 30px 8px' }}>Groupe Str Régional</th>
                             <th scope="col" className="text-left" colSpan='4'>Nombre De Client</th>
                             
-                            <th scope="col" className="text-left" colSpan='4'>MWH</th>
+                            <th scope="col" className="text-left" colSpan='4'>Vente En MWH</th>
                             
-                            <th scope="col" className="text-left" colSpan='4'>KDH</th>
+                            <th scope="col" className="text-left" colSpan='4'>Vente En KDH</th>
                             
-                            <th scope="col" className="text-left" colSpan='4'>Paratarif KDH</th>
                             
                         </tr>
                         <tr>
@@ -311,10 +302,6 @@ function FilterData() {
                             <th scope="col" className="text-left" style={{ padding:'0px 27px 8px 10px' }}>Ecart</th>
                             <th scope="col" className="text-left" style={{ padding:'0px 27px 8px 10px' }}>Evo%</th>
                             <th scope="col" className="text-left" style={{ padding:'0px 27px 8px 10px' }}>PS__12</th>
-                            <th scope="col" className="text-left" style={{ padding:'0px 27px 8px 10px' }}>PS</th>
-                            <th scope="col" className="text-left" style={{ padding:'0px 27px 8px 10px' }}>Ecart</th>
-                            <th scope="col" className="text-left" style={{ padding:'0px 27px 8px 10px' }}>Evo%</th>
-                            <th scope="col" className="text-left" style={{ padding:'0px 27px 8px 10px' }}>PS_12</th>
                             <th scope="col" className="text-left" style={{ padding:'0px 27px 8px 10px' }}>PS</th>
                             <th scope="col" className="text-left" style={{ padding:'0px 27px 8px 10px' }}>Ecart</th>
                             <th scope="col" className="text-left" style={{ padding:'0px 27px 8px 10px' }}>Evo%</th>
@@ -337,11 +324,7 @@ function FilterData() {
                   maximumFractionDigits: 2,
                   useGrouping: true,
                 });
-                let ecartPTF=(item.Paratarif_KDH_PS-item.Paratarif_KDH_PS_12).toLocaleString('fr-FR', {
-                  minimumFractionDigits: 2,
-                  maximumFractionDigits: 2,
-                  useGrouping: true,
-                });
+                
                 let ecartNBK=(item.NBK_PS-item.NBK_PS_12);
 
                 ///percentageMWH
@@ -372,20 +355,7 @@ function FilterData() {
                       percentageDiffKDH = `${percentageKDH.toFixed(2)}%`;
                     }
                   }
-                ///percentagePTF
-                let percentageDiffPTF;
-                let percentagePTF;
-                if (item.Paratarif_KDH_PS_12 === 0) {
-                    percentageDiffPTF = '-';
-                  } else {
-                    let diff = item.Paratarif_KDH_PS - item.Paratarif_KDH_PS_12;
-                    percentagePTF = (diff / item.Paratarif_KDH_PS_12) * 100;
-                    if (isNaN(percentagePTF)) {
-                      percentageDiffPTF = 'N/A';
-                    } else {
-                      percentageDiffPTF = `${percentagePTF.toFixed(2)}%`;
-                    }
-                  }
+                
                 ///percentageNBK
                 let percentageDiffNBK
                 let percentageNBK;
@@ -439,18 +409,6 @@ function FilterData() {
                 })}</td>
                 <td className="text-left">{(ecartKDH)}</td>
                 <td className="text-left">{percentageDiffKDH}</td>
-                <td className="text-left">{(item.Paratarif_KDH_PS_12).toLocaleString('fr-FR', {
-                  minimumFractionDigits: 2,
-                  maximumFractionDigits: 2,
-                  useGrouping: true,
-                })}</td>
-                <td className="text-left">{(item.Paratarif_KDH_PS).toLocaleString('fr-FR', {
-                  minimumFractionDigits: 2,
-                  maximumFractionDigits: 2,
-                  useGrouping: true,
-                })}</td>
-                <td className="text-left">{(ecartPTF)}</td>
-                <td className="text-left">{percentageDiffPTF}</td>
               </tr>
               </>      
       )
@@ -505,26 +463,7 @@ function FilterData() {
                   maximumFractionDigits: 2,
                   useGrouping: true,
                 })+'%'}</strong></td>
-                <td><strong>{(totalPTF_PS_12).toLocaleString('fr-FR', {
-                  minimumFractionDigits: 2,
-                  maximumFractionDigits: 2,
-                  useGrouping: true,
-                })}</strong></td>
-                <td><strong>{(totalPTF_PS).toLocaleString('fr-FR', {
-                  minimumFractionDigits: 2,
-                  maximumFractionDigits: 2,
-                  useGrouping: true,
-                })}</strong></td>
-                <td><strong>{(totalPTF_PS-totalPTF_PS_12).toLocaleString('fr-FR', {
-                  minimumFractionDigits: 2,
-                  maximumFractionDigits: 2,
-                  useGrouping: true,
-                })}</strong></td>
-                <td><strong>{(((totalPTF_PS-totalPTF_PS_12)/totalPTF_PS_12)*100).toLocaleString('fr-FR', {
-                  minimumFractionDigits: 2,
-                  maximumFractionDigits: 2,
-                  useGrouping: true,
-                })+'%'}</strong></td>
+                
               </tr>
       </tbody>
     </table>

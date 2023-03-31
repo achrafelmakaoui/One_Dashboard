@@ -8,7 +8,7 @@ import BasicTable from './components/Table/Table';
 import Login from './components/Login/Login';
 // import Annee from './components/Annee/Annee';
 import Upload from './components/Upload/Upload';
-import AnnPost from './components/AnneePost/AnnPost';
+// import AnnPost from './components/AnneePost/AnnPost';
 
 function App(){
   return(
@@ -19,7 +19,7 @@ function App(){
             <Routes>
               <Route path='/' element={<><MainDash/></>}/>
               <Route path='/Tables' element={<><BasicTable/></>}/>
-              <Route path='/Data' element={<><Upload/><AnnPost/></>}/>
+              <Route path='/Data' element={<><Upload/></>}/>
               <Route path='/Analytics' element={<><Login/></>}/>
             </Routes>
         </BrowserRouter>

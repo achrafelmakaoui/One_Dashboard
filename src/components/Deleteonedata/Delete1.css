@@ -1,0 +1,70 @@
+@font-face {
+  font-family: "GilroyMedium";
+  src: url("../../fonts/Gilroy-Medium.ttf");
+
+}
+@font-face {
+  font-family: "GilroySemiBold";
+  src: url("../../fonts/Gilroy-SemiBold.ttf");
+}
+@font-face {
+font-family: "Myriad Semibold";
+src: url("../../fonts/MYRIADPRO-SEMIBOLD.woff") format("woff");
+}
+
+@font-face {
+font-family: "Myriad Bold";
+src: url("../../fonts/MYRIADPRO-BOLD.woff") format("woff");
+}
+@font-face {
+font-family: "Myriad Bold Italic";
+src: url("../../fonts//MYRIADPRO-BOLDIT.woff") format("woff");
+}
+@font-face {
+font-family: "Gruppo";
+src: url("../../fonts/Gruppo-Regular.ttf");
+}
+@font-face {
+  font-family: "Futura";
+  src: url("../../fonts/futur.ttf");
+}
+@font-face {
+  font-family: "Futura bold italic";
+  src: url("../../fonts/Futura\ Bold\ Italic\ font.ttf");
+}
+@font-face {
+  font-family: "Futura bold";
+  src: url("../../fonts/Futura\ Bold\ font.ttf");
+}
+@font-face {
+  font-family: "Futura Medium";
+  src: url("../../fonts/Futura\ Medium\ Italic\ font.ttf");
+}
+
+.btndeletedata{
+  padding: 20px 95px  20px 95PX;
+
+}
+.btndeleteall{
+  background-color:#db3535;
+  color:whitesmoke;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 9px;
+  border-radius: 3px;
+  font-family: "Myriad Bold Italic";
+  font-size: 18px;
+}
+.btndeleteall .i{
+  color:whitesmoke;
+  width: 1.50em;
+  height:1.50em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 9px;
+  margin-bottom: 5px;
+
+
+}

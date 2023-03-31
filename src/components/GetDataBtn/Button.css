@@ -40,66 +40,31 @@
     font-family: "Futura Medium";
     src: url("../../fonts/Futura\ Medium\ Italic\ font.ttf");
   }
-  .conta{
-    display: inline;
-    justify-content: space-between;
-    align-items: center;
-  }
-.upload{
-    width: 100%;
+
+.btngetdata{
+    padding: 50px 95px  20px 95PX;
+}
+.btngetall{
+    background-color:#376DBD;
+    color:whitesmoke;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    padding-top: 90px;
-}
-
-
-.one1 .headinfo{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.one1 h3{
-    color: #376DBD;
-    font-family: "Myriad Bold Italic";
-
-}
-.one1 .i{
-  color: #376DBD;
-  width: 2.25em;
-  height: 2.25em;
-}
-.one2 .headinfo{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-.one2 h3{
+    padding: 9px;
+    border-radius: 3px;
   font-family: "Myriad Bold Italic";
-  color: #376DBD;
-
+  font-size: 18px;
+     
 }
-.one2 .i{
-  color: #376DBD;
-  width: 2.25em;
-  height: 2.25em;
-}
-
-.one3 .headinfo{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-.one3 h3{
-  font-family: "Myriad Bold Italic";
-  color: #376DBD;
-
-}
-.one3 .i{
-  color: #376DBD;
-  width: 2.25em;
-  height: 2.25em;
-}
+.btngetall .i{
+    color:whitesmoke;
+    width: 1.50em;
+    height:1.50em ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 9px;
+    margin-bottom: 5px;
 
 
+}

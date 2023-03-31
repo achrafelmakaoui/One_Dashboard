@@ -4,7 +4,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
 import { useState } from 'react'
 const One2 = () => {
-  const [Alert,setAlert]=useState(false)
+  const [AlertErr,setAlertErr]=useState(false)
+  const [AlertSucc,setAlertSucc]=useState(false)
   const [selectedFile, setSelectedFile] = useState(null);
 
   const handleFileInput = (e) => {
@@ -14,7 +15,8 @@ const One2 = () => {
   e.preventDefault();
   if (!selectedFile) {
     console.log("Please select a file.");
-    setAlert(true)
+    setAlertSucc(false)
+    setAlertErr(true)
     return;
   }
   const formData = new FormData();
@@ -29,6 +31,8 @@ const One2 = () => {
     }
     const data = await response.json();
     console.log(data);
+    setAlertErr(false)
+    setAlertSucc(true)
   } catch (err) {
     console.error(err);
   }
@@ -48,9 +52,10 @@ const One2 = () => {
               </button>
             </form>
         </div>
-        {Alert && (<p style={{ color:'red' }}>Please select a file.</p>)}
+        {AlertErr && (<p style={{ color:'red' }}>Please select a file.</p>)}
+        {AlertSucc && (<p style={{ color:'green' }}>File has been uploaded</p>)}
         <p className="mainn">Fichiers Pris En Charge</p>
-        <p className="infoo">Excel</p>
+        <p className="infoo">XLS, XLSX, CSV</p>
     </div>
     </>
   )
