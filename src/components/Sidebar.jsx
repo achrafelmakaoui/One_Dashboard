@@ -4,15 +4,16 @@ import Logo from '../imgs/onelg.png'
 import Mrc from '../imgs/bnnerelec.jpeg'
 import { Link } from "react-router-dom";
 
+
 const Sidebar = () => {
- 
+    
   return (
     <>
       <nav>
-        <div class="logo">
+        <div className="logo">
             <img src={Logo} alt='one banner'/>
         </div>
-        <ul class="nav-links">
+        <ul className="nav-links">
             <li>
                 <Link to="/">Dashboard</Link>
             </li>
@@ -22,9 +23,10 @@ const Sidebar = () => {
             <li>
                 <Link to="Data">Data</Link>
             </li>
-            <li>
-                <Link to="Analytics">Analytics</Link>
-            </li>
+            {/* <li>
+                <Link to="Setting">Setting</Link>
+            </li> */}
+            
         </ul>
         <div className="mins">
             <img src={Mrc} className='mrc' alt=''/>

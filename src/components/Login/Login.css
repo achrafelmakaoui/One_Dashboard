@@ -169,46 +169,47 @@
   }
   
   .textbox span {
-    color: #4e81ceb0;
+    color: #487dceb6;
     top: 50%;
-    translate: 0 -200%;
+    translate: 0 -155%;
     left: 0;
+    opacity: 0.7;
     pointer-events: none;
+    transition: 0.5s;
   }
   
-  .textbox .inputLg {
+  .formulaire .textbox .inputLg {
     padding: 0 24px 0 36px;
     border-bottom: 2px solid #376DBD;
-    color: #376DBD;
-    height: 72px;
+    color: #141414;
+    height: 50px;
+    font-family: 'Futura Medium';
   }
   
-  :is(.inputLg:focus, .inputLg:valid) ~ label {
-    translate: -40px -60px;
+  :is(.textbox .inputLg:focus, .textbox .inputLg:valid) ~ label {
+    translate: -40px -55px;
     scale: 0.875;
-  }
-  
-  .inputLg:focus ~ label {
-    color: rgb(55, 109, 190);
-  }
-  
-  .inputLg:focus {
-    border-color: #376DBD;
-  }
-  
-  :is(.inputLg:focus, .inputLg:valid) ~ span {
     color: #376DBD;
+
+  }
+
+  :is(.textbox .inputLg:focus, .textbox .inputLg:valid) ~ span {
+    color: #376DBD;
+    opacity: 1;
   }
   
-  .textbox label {
+  .formulaire .textbox label {
     position: absolute;
     top: 50%;
     left: 36px;
     translate: 0 -115%;
-    
     color: rgba(72, 125, 206, 0.714);
     pointer-events: none;
-    transition: 0.4s;
+    transition: 0.5s;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: inherit;
+    
   }
   
   .formulaire button {
@@ -223,6 +224,10 @@
     border: 0;
     font-family: inherit;
     font-weight: 600;
+  }
+  .formulaire button:focus{
+    background: #2a6cd8bf;
+    color: #f9f9f9;
   }
   
   

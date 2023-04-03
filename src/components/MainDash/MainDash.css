@@ -1,3 +1,24 @@
 .MainDash{
    width: 100%;
+   position: relative;
+}
+.MainDash .Gear{
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  background: #376DBD;
+ padding: 10px;
+ margin: 25px;
+ border-radius: 50%;
+ box-shadow:  0px 5px 10px 0px #376dbd6b;
+
+}
+.gearicon{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 2em;
+   height: 2em;
+   color: white;
+   cursor: pointer;
 }
