@@ -124,7 +124,7 @@ function FilterData() {
     <div className="tb_ft">
       <div className="bnfil">
         <div className="h2filt">
-          <h2>Filter {MenuState && (<FilterListRoundedIcon ref={menu} onClick={closesideMenu} className='filter_icon_on'/>)} {MenuState2 &&(<FilterListOffRoundedIcon  ref={menu} onClick={showhideMenu} className='filter_icon_off'/>)}</h2>
+          <h2>Filtrer {MenuState && (<FilterListRoundedIcon ref={menu} onClick={closesideMenu} className='filter_icon_on'/>)} {MenuState2 &&(<FilterListOffRoundedIcon  ref={menu} onClick={showhideMenu} className='filter_icon_off'/>)}</h2>
         </div>
         <div className="h2anne">
           <Annee/>

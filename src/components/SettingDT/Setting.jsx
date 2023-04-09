@@ -39,8 +39,8 @@ const Setting = () => {
             <img src={Picuser} className='photouser' alt='userpic'/>
           </div>
           <div className='userinffoo'>
-            <h5 className='EmailH4'><FontAwesomeIcon icon={faEnvelopeCircleCheck}/> {PerData ? PerData.email:'Loading...'} </h5>
-            <h5 className='NameH4'><FontAwesomeIcon icon={faUserShield}/> {PerData ? PerData.username:'Loading...'}  </h5>
+            <h5 className='EmailH4'><FontAwesomeIcon icon={faEnvelopeCircleCheck}/> {PerData ? PerData.email:'Chargement...'} </h5>
+            <h5 className='NameH4'><FontAwesomeIcon icon={faUserShield}/> {PerData ? PerData.username:'Chargement...'}  </h5>
           </div>
         </div>
         <div className='LogOut'>

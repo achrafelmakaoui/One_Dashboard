@@ -32,8 +32,8 @@ const AnnPost = () => {
           onChange={handleChange}
           required
         />
-        {PostAlert && (<p style={{ color:'green' }} className='alertP'>Mois D'analyse Posted</p>)}
-        <button type="submit" className="btnpost">Submit</button>
+        {PostAlert && (<p style={{ color:'green' }} className='alertP'>Mois D'analyse a été envoyé.</p>)}
+        <button type="submit" className="btnpost">Envoyer</button>
       </form>
     </div>
     </>

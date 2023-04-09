@@ -64,6 +64,7 @@
     font-family: "Myriad Bold Italic";
     color: #0077DB;
     padding-left: 25px;
+    padding-top: 20px;
 }
 .UpdateIU .UpdateInputs{
     display: flex;
@@ -127,7 +128,7 @@
 }
 
 .divbtnupd{
-    padding: 30px 25px 20px 25px;
+    padding: 30px 25px 40px 25px;
 }
 .btnUpdate{
     background-color:#376DBD;

@@ -18,7 +18,7 @@ const Annee = () => {
 
   return (
     <>
-     <h2 className='anneedas'>Mois D'analyse: {annee ? annee.Annee_Analyse:'Loading...'} {annee && annee._id && <AnDelete id={annee._id} />}</h2>
+     <h2 className='anneedas'>Mois D'analyse: {annee ? annee.Annee_Analyse:'Chargement...'} {annee && annee._id && <AnDelete id={annee._id} />}</h2>
      
     </>
   );

@@ -37,7 +37,7 @@ export const SidebarData = [
 // Analytics Cards Data
 export const cardsData = [
   {
-    title: "Sales",
+    title: "Ventes",
     color: {
       backGround: "linear-gradient(180deg, #36326b 0%, #5f59b3 100%)",
       boxShadow: "0px 10px 20px 0px #e0c6f5",
@@ -47,13 +47,13 @@ export const cardsData = [
     png: UilUsdSquare,
     series: [
       {
-        name: "Sales",
+        name: "Ventes",
         data: [31, 40, 28, 51, 42, 109, 10],
       },
     ],
   },
   {
-    title: "Revenue",
+    title: "Revenu",
     color: {
       backGround: "linear-gradient(180deg, #FF919D 0%, #FC929D 100%)",
       boxShadow: "0px 10px 20px 0px #FDC0C7",
@@ -63,13 +63,13 @@ export const cardsData = [
     png: UilMoneyWithdrawal,
     series: [
       {
-        name: "Revenue",
+        name: "Revenu",
         data: [10, 100, 50, 70, 80, 30, 40],
       },
     ],
   },
   {
-    title: "Expenses",
+    title: "Dépenses",
     color: {
       backGround:
         "linear-gradient(rgb(248, 212, 154) -146.42%, rgb(255 202 113) -46.42%)",
@@ -80,7 +80,7 @@ export const cardsData = [
     png: UilClipboardAlt,
     series: [
       {
-        name: "Expenses",
+        name: "Dépenses",
         data: [10, 25, 15, 30, 12, 15, 20],
       },
     ],

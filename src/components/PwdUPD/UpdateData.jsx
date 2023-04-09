@@ -32,8 +32,8 @@ const UpdateData = ({ id }) => {
             <form onSubmit={handleSubmit}>
                 <div className='UpdateInputs'> 
                     <div className='inputusername'>
-                        <label>Username*</label><br/>
-                        <input type='text' name="username" value={user.username} onChange={handleChange} autoComplete="username" placeholder='Entre Username...'/>
+                        <label>Nom*</label><br/>
+                        <input type='text' name="username" value={user.username} onChange={handleChange} autoComplete="username" placeholder='Entre Nom...'/>
                     </div>
                     <div className='inputemail'>
                         <label>Email*</label><br/>
@@ -41,8 +41,8 @@ const UpdateData = ({ id }) => {
                     </div>
                 </div>
                 <div className='passwordinput'>
-                    <label>Password*</label><br/>
-                    <input type='password' name="password" value={user.password} onChange={handleChange} autoComplete="current-password" placeholder='Entre Password...'/>
+                    <label>Mot De Passe*</label><br/>
+                    <input type='password' name="password" value={user.password} onChange={handleChange} autoComplete="current-password" placeholder='Entre Mot De Passe...'/>
                 </div>
                 <div className='divbtnupd'>
                     <button type='submit' className='btnUpdate'>

@@ -48,12 +48,12 @@ const One2 = () => {
                   <i>
                       <FontAwesomeIcon icon={faPlus} />
                   </i>
-                  Upload File
+                  Envoyer
               </button>
             </form>
         </div>
-        {AlertErr && (<p style={{ color:'red' }}>Please select a file.</p>)}
-        {AlertSucc && (<p style={{ color:'green' }}>File has been uploaded</p>)}
+        {AlertErr && (<p style={{ color:'red' }}>Veuillez sélectionner un fichier.</p>)}
+        {AlertSucc && (<p style={{ color:'green' }}>Le fichier a été envoyé.</p>)}
         <p className="mainn">Fichiers Pris En Charge</p>
         <p className="infoo">XLS, XLSX, CSV</p>
     </div>

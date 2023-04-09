@@ -29,7 +29,7 @@ const Login = () => {
             <div className='LoginImg'>
                 <img src={Sheild} alt='sheild'/>
                 <h1>One Dashboard</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate sapiente quaerat reiciendis libero possimus odio, inventore at iusto aspernatur. Enim.</p>
+                <p>Connectez-vous dès maintenant pour simplifier votre gestion de données et obtenir une vue d'ensemble complète de vos performances.</p>
             </div>
         </div>
         <div className='LoginDiv'>
@@ -37,24 +37,25 @@ const Login = () => {
                 <div className='imglg'>
                      <img src={logo} alt='logo'/>
                 </div>
-                <h1>Hello Again!</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, ratione.  dolor sit amet consectetur adipisicing elit. Minus, ratione.</p>
+                <h1>Assistant Commercial!</h1>
+                <p>Bienvenue sur notre page de connexion !<br/>
+                Veuillez saisir vos identifiants ci-dessous.</p>
             </div>
             <div className='LoginForm'>
             <form className="formulaire">
                 <div className="textbox">
-                    <input type="text" className='inputLg' onChange={(e) => setUsername(e.target.value)} autoComplete="username" placeholder='Entre Username...'/>
-                    <label>Username</label>
+                    <input type="text" className='inputLg' onChange={(e) => setUsername(e.target.value)} autoComplete="username" placeholder='Entre Nom...'/>
+                    <label>Nom</label>
                     <FontAwesomeIcon icon={faUserShield} className='usr'/>
                 </div>
                 <div className="textbox">
-                    <input type={passwordType} className='inputLg' onChange={(e) => setPassword(e.target.value)} autoComplete="current-password" placeholder='Entre Password...'/>
-                    <label>Password</label>
+                    <input type={passwordType} className='inputLg' onChange={(e) => setPassword(e.target.value)} autoComplete="current-password" placeholder='Entre Mot De Passe...'/>
+                    <label>Mot De Passe</label>
                     <span class="material-symbols-outlined" id='key'> key </span>
                 </div>
                 <div className='btnbnr'>
                     <button type="submit" onClick={handleClick} disabled={isFetching}>
-                        Login
+                        Se Connecter
                         <span class="material-symbols-outlined"> arrow_forward </span>
                     </button>
                     <button id='btnshowpwd' onClick={togglePasswordVisibility}>
