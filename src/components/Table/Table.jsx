@@ -86,7 +86,7 @@ function FilterData() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/allonedata/filter", {
+        const res = await axios.get("https://oneeapi.onrender.com/api/allonedata/filter", {
           params: {
             grp_str_input: grpStr, // send an array of selected values
             type_usage: typeUsage, // send an array of selected values

@@ -12,7 +12,7 @@ const Button = () => {
 
   const fetchData = async () => {
     try {
-      await axios.get('http://localhost:5000/api/one/my-data');
+      await axios.get('https://oneeapi.onrender.com/api/one/my-data');
       // setData(response.data);
       setAlertErr(false)
       setAlertSucc(true)

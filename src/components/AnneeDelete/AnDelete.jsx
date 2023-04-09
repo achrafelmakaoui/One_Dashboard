@@ -6,7 +6,7 @@ const AnDelete = ({ id }) => {
   const [setMessage] = useState('');
 
   const handleDelete = () => {
-    axios.delete(`http://localhost:5000/api/annee/${id}`)
+    axios.delete(`https://oneeapi.onrender.com/api/annee/${id}`)
       .then(response => {
         setMessage(response.data);
       })

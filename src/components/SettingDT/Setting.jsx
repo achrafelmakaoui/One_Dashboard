@@ -22,7 +22,7 @@ const Setting = () => {
     const [PerData,setPerData] = useState('')
     const id = useSelector(state => state.user.currentUser._id);
     useEffect(() => {
-        axios.get(`http://localhost:5000/api/auth/${id}`)
+        axios.get(`https://oneeapi.onrender.com/api/auth/${id}`)
           .then(response => {
             setPerData(response.data);
           })

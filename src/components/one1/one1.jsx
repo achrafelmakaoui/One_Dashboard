@@ -22,7 +22,7 @@ const One1 = () => {
   const formData = new FormData();
   formData.append("file", selectedFile, selectedFile.name);
   try {
-    const response = await fetch("http://localhost:5000/api/one/upload", {
+    const response = await fetch("https://oneeapi.onrender.com/api/one/upload", {
       method: "POST",
       body: formData,
     });

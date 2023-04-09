@@ -9,7 +9,7 @@ const Delete1 = () => {
     const [AlertSucc,setAlertSucc]=useState(false)
     const handleDeleteAllDocuments = async () => {
         try {
-          await axios.delete("http://localhost:5000/api/allonedata/Delete");
+          await axios.delete("https://oneeapi.onrender.com/api/allonedata/Delete");
           console.log("All documents deleted successfully");
           setAlertErr(false)
           setAlertSucc(true)

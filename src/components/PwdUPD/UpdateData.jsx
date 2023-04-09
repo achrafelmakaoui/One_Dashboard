@@ -18,7 +18,7 @@ const UpdateData = ({ id }) => {
       const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-          const response = await axios.put(`http://localhost:5000/api/auth/${id}`, user);
+          const response = await axios.put(`https://oneeapi.onrender.com/api/auth/${id}`, user);
           console.log(response.data);
         } catch (error) {
           console.log(error);

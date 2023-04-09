@@ -7,7 +7,7 @@ const AnnPost = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:5000/api/annee/", formData);
+      const response = await axios.post("https://oneeapi.onrender.com/api/annee/", formData);
       console.log(response.data); // log the saved data
       SetPostAlert(true)
     } catch (error) {
