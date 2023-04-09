@@ -105,7 +105,6 @@
     height: 100%;
     display: grid;
     justify-content: center;
-    align-items: center;
 }
 
 .LoginDiv .LoginInfo{
@@ -167,7 +166,15 @@
     position: relative;
     margin-bottom: 16px;
   }
-  
+  .textbox .usr{
+    color: #487dceb6;
+    top: 50%;
+    translate: 0 -240%;
+    left: 0;
+    opacity: 0.7;
+    pointer-events: none;
+    transition: 0.5s;
+  }
   .textbox span {
     color: #487dceb6;
     top: 50%;
@@ -192,7 +199,10 @@
     color: #376DBD;
 
   }
-
+  :is(.textbox .inputLg:focus, .textbox .inputLg:valid) ~ .usr {
+    color: #376DBD;
+    opacity: 1;
+  }
   :is(.textbox .inputLg:focus, .textbox .inputLg:valid) ~ span {
     color: #376DBD;
     opacity: 1;
@@ -224,12 +234,59 @@
     border: 0;
     font-family: inherit;
     font-weight: 600;
+    margin: 3px;
   }
   .formulaire button:focus{
     background: #2a6cd8bf;
     color: #f9f9f9;
   }
   
+  .btnbnr{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  #btnshowpwd{
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    padding: 0 24px;
+    border-radius: 6px;
+    background: #216ce7;
+    color: #f9f9f9;
+    border: 0;
+    font-family: inherit;
+    font-weight: 600;
+    margin: 3px;
+  }
+  #showpwdicon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  .textbox {
+    margin-bottom: 1.5rem;
+  }
   
   
- 
+  .textbox #showpwdicon:hover {
+    color: #5d5d5d;
+  }
+  
+  .textbox .inputLg[type="password"]::-ms-reveal,
+  .textbox .inputLg[type="password"]::-ms-clear {
+    display: none;
+  }
+  
+  .textbox .inputLg[type="password"]::-webkit-contacts-auto-fill-button {
+    visibility: hidden;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+  }
+  

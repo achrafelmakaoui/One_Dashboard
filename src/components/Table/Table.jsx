@@ -288,27 +288,27 @@ function FilterData() {
                             <th scope="col" className="text-left" rowSpan='2' style={{ padding:'0px 20px 30px 10px' }} >Tension</th>
                             <th scope="col" className="text-left" rowSpan='2' style={{ padding:'0px 20px 30px 8px' }} >Type Usage</th>
                             <th scope="col" className="text-left" rowSpan='2' style={{ padding:'0px 20px 30px 8px' }}>Groupe Str Régional</th>
-                            <th scope="col" className="text-left" colSpan='4'>Nombre De Client</th>
+                            <th scope="col" className="text-center" colSpan='4' style={{ borderRight:'1px solid rgba(28, 28, 28, 0.19)' }}>Nombre De Client</th>
                             
-                            <th scope="col" className="text-left" colSpan='4'>Vente En MWH</th>
+                            <th scope="col" className="text-center" colSpan='4' style={{ borderRight:'1px solid rgba(28, 28, 28, 0.19)' }}>Vente En MWH</th>
                             
-                            <th scope="col" className="text-left" colSpan='4'>Vente En KDH</th>
+                            <th scope="col" className="text-center" colSpan='4'>Vente En KDH</th>
                             
                             
                         </tr>
                         <tr>
-                            <th scope="col" className="text-left" style={{ padding:'0px 27px 8px 10px' }}>PS_12</th>
-                            <th scope="col" className="text-left" style={{ padding:'0px 27px 8px 10px' }}>PS</th>
-                            <th scope="col" className="text-left" style={{ padding:'0px 27px 8px 10px' }}>Ecart</th>
-                            <th scope="col" className="text-left" style={{ padding:'0px 27px 8px 10px' }}>Evo%</th>
-                            <th scope="col" className="text-left" style={{ padding:'0px 27px 8px 10px' }}>PS__12</th>
-                            <th scope="col" className="text-left" style={{ padding:'0px 27px 8px 10px' }}>PS</th>
-                            <th scope="col" className="text-left" style={{ padding:'0px 27px 8px 10px' }}>Ecart</th>
-                            <th scope="col" className="text-left" style={{ padding:'0px 27px 8px 10px' }}>Evo%</th>
-                            <th scope="col" className="text-left" style={{ padding:'0px 27px 8px 10px' }}>PS_12</th>
-                            <th scope="col" className="text-left" style={{ padding:'0px 27px 8px 10px' }}>PS</th>
-                            <th scope="col" className="text-left" style={{ padding:'0px 27px 8px 10px' }}>Ecart</th>
-                            <th scope="col" className="text-left" style={{ padding:'0px 27px 8px 10px' }}>Evo%</th>
+                            <th scope="col" className="text-center" >PS_12</th>
+                            <th scope="col" className="text-center" >PS</th>
+                            <th scope="col" className="text-center" >Ecart</th>
+                            <th scope="col" className="text-center" style={{borderRight:'1px solid rgba(28, 28, 28, 0.19)' }} >Evo%</th>
+                            <th scope="col" className="text-center" >PS__12</th>
+                            <th scope="col" className="text-center" >PS</th>
+                            <th scope="col" className="text-center" >Ecart</th>
+                            <th scope="col" className="text-center" style={{ borderRight:'1px solid rgba(28, 28, 28, 0.19)' }}>Evo%</th>
+                            <th scope="col" className="text-center" >PS_12</th>
+                            <th scope="col" className="text-center" >PS</th>
+                            <th scope="col" className="text-center" >Ecart</th>
+                            <th scope="col" className="text-center" >Evo%</th>
                         </tr>
                     </thead>
                     
@@ -381,84 +381,84 @@ function FilterData() {
               <td>{typebsmy}</td>
                 <td className="text-left">{item.type_usage}</td>
                 <td className="text-left" >{item.groupe_str_régional}</td>
-                <td className="text-left">{(item.NBK_PS_12)}</td>
-                <td className="text-left">{(item.NBK_PS)}</td>
-                <td className="text-left">{ecartNBK}</td>
-                <td className="text-left">{percentageDiffNBK}</td>
-                <td className="text-left">{(item.MWH_PS_12).toLocaleString('fr-FR', {
+                <td className="text-center">{(item.NBK_PS_12)}</td>
+                <td className="text-center">{(item.NBK_PS)}</td>
+                <td className="text-center">{ecartNBK}</td>
+                <td className="text-center" style={{ borderRight:'1px solid rgba(28, 28, 28, 0.19)' }}>{percentageDiffNBK}</td>
+                <td className="text-center">{(item.MWH_PS_12).toLocaleString('fr-FR', {
                   minimumFractionDigits: 2,
                   maximumFractionDigits: 2,
                   useGrouping: true,
                 })}</td>
-                <td className="text-left">{(item.MWH_PS).toLocaleString('fr-FR', {
+                <td className="text-center">{(item.MWH_PS).toLocaleString('fr-FR', {
                   minimumFractionDigits: 2,
                   maximumFractionDigits: 2,
                   useGrouping: true,
                 })}</td>
-                <td className="text-left">{(ecartMWH)}</td>
-                <td className="text-left">{percentageDiffMWH}</td>
-                <td className="text-left">{(item.KDH_PS_12).toLocaleString('fr-FR', {
+                <td className="text-center">{(ecartMWH)}</td>
+                <td className="text-center" style={{ borderRight:'1px solid rgba(28, 28, 28, 0.19)' }}>{percentageDiffMWH}</td>
+                <td className="text-center">{(item.KDH_PS_12).toLocaleString('fr-FR', {
                   minimumFractionDigits: 2,
                   maximumFractionDigits: 2,
                   useGrouping: true,
                 })}</td>
-                <td className="text-left">{(item.KDH_PS).toLocaleString('fr-FR', {
+                <td className="text-center">{(item.KDH_PS).toLocaleString('fr-FR', {
                   minimumFractionDigits: 2,
                   maximumFractionDigits: 2,
                   useGrouping: true,
                 })}</td>
-                <td className="text-left">{(ecartKDH)}</td>
-                <td className="text-left">{percentageDiffKDH}</td>
+                <td className="text-center">{(ecartKDH)}</td>
+                <td className="text-center">{percentageDiffKDH}</td>
               </tr>
               </>      
       )
       })}
              <tr>
                 <td colSpan='3' className='text-center' style={{ backgroundColor:'whitesmoke' }}><strong style={{ fontSize:'18px',color:'#376DBD'}}>Total</strong></td>
-                <td><strong>{(totalNBK_PS_12)}</strong></td>
-                <td><strong>{(totalNBK_PS)}</strong></td>
-                <td><strong>{(totalNBK_PS-totalNBK_PS_12)}</strong></td>
-                <td><strong>{(((totalNBK_PS-totalNBK_PS_12)/totalNBK_PS_12)*100).toLocaleString('fr-FR', {
+                <td className='text-center'><strong>{(totalNBK_PS_12)}</strong></td>
+                <td className='text-center'><strong>{(totalNBK_PS)}</strong></td>
+                <td className='text-center'><strong>{(totalNBK_PS-totalNBK_PS_12)}</strong></td>
+                <td className='text-center' style={{ borderRight:'1px solid rgba(28, 28, 28, 0.19)' }}><strong>{(((totalNBK_PS-totalNBK_PS_12)/totalNBK_PS_12)*100).toLocaleString('fr-FR', {
                   minimumFractionDigits: 2,
                   maximumFractionDigits: 2,
                   useGrouping: true,
                 })+'%'}</strong></td>
-                <td><strong>{(totalMWH_PS_12).toLocaleString('fr-FR', {
+                <td className='text-center'><strong>{(totalMWH_PS_12).toLocaleString('fr-FR', {
                   minimumFractionDigits: 2,
                   maximumFractionDigits: 2,
                   useGrouping: true,
                 })}</strong></td>
-                <td><strong>{(totalMWH_PS).toLocaleString('fr-FR', {
+                <td className='text-center'><strong>{(totalMWH_PS).toLocaleString('fr-FR', {
                   minimumFractionDigits: 2,
                   maximumFractionDigits: 2,
                   useGrouping: true,
                 })}</strong></td>
-                <td><strong>{(totalMWH_PS-totalMWH_PS_12).toLocaleString('fr-FR', {
+                <td className='text-center'><strong>{(totalMWH_PS-totalMWH_PS_12).toLocaleString('fr-FR', {
                   minimumFractionDigits: 2,
                   maximumFractionDigits: 2,
                   useGrouping: true,
                 })}</strong></td>
-                <td><strong>{(((totalMWH_PS-totalMWH_PS_12)/totalMWH_PS_12)*100).toLocaleString('fr-FR', {
+                <td className='text-center' style={{ borderRight:'1px solid rgba(28, 28, 28, 0.19)' }}><strong>{(((totalMWH_PS-totalMWH_PS_12)/totalMWH_PS_12)*100).toLocaleString('fr-FR', {
                   minimumFractionDigits: 2,
                   maximumFractionDigits: 2,
                   useGrouping: true,
                 })+'%'}</strong></td>
-                <td><strong>{(totalKDH_PS_12).toLocaleString('fr-FR', {
+                <td className='text-center'><strong>{(totalKDH_PS_12).toLocaleString('fr-FR', {
                   minimumFractionDigits: 2,
                   maximumFractionDigits: 2,
                   useGrouping: true,
                 })}</strong></td>
-                <td><strong>{(totalKDH_PS).toLocaleString('fr-FR', {
+                <td className='text-center'><strong>{(totalKDH_PS).toLocaleString('fr-FR', {
                   minimumFractionDigits: 2,
                   maximumFractionDigits: 2,
                   useGrouping: true,
                 })}</strong></td>
-                <td><strong>{(totalKDH_PS-totalKDH_PS_12).toLocaleString('fr-FR', {
+                <td className='text-center'><strong>{(totalKDH_PS-totalKDH_PS_12).toLocaleString('fr-FR', {
                   minimumFractionDigits: 2,
                   maximumFractionDigits: 2,
                   useGrouping: true,
                 })}</strong></td>
-                <td><strong>{(((totalKDH_PS-totalKDH_PS_12)/totalKDH_PS_12)*100).toLocaleString('fr-FR', {
+                <td className='text-center'><strong>{(((totalKDH_PS-totalKDH_PS_12)/totalKDH_PS_12)*100).toLocaleString('fr-FR', {
                   minimumFractionDigits: 2,
                   maximumFractionDigits: 2,
                   useGrouping: true,
