@@ -64,21 +64,27 @@
 .LoginDS .LoginImg{
     display: grid;
     justify-content: center;
+    flex-direction: column;
     align-items: center;
     left: 0;
     right: 0;
     top: 50%;
-    translate: 20% 0%;
 }
-
+.LoginDS .LoginImg .imgdivsheild{
+  display: grid;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
 .LoginDS .LoginImg img{
-    width: 50%;
+    width: 100%;
     filter: drop-shadow(0px 20px 10px rgba(0, 0, 0, 0.398));
     animation-name: floating;
     animation-duration: 4s;
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
     padding: 20px;
+    
 }
 
 @keyframes floating {
@@ -90,14 +96,17 @@
 
 .LoginDS .LoginImg h1{
     color: rgb(255, 255, 255);
-    margin-left: 100px;
+    display: grid;
+    justify-content: center;
+    flex-direction: column;
     font-family: 'Myriad Bold Italic';
 }
 .LoginDS .LoginImg p{
     color: rgba(255, 255, 255, 0.747);
-    margin-left: 30px;
+    display: grid;
+    justify-content: center;
+    flex-direction: column;
     font-family: 'GilroyMedium';
-    width: 50%;
     text-align: center;
 }
 .LoginDiv{
@@ -115,7 +124,7 @@
 .LoginDiv .LoginInfo .imglg{
     display: flex;
     justify-content: center;
-    padding: 15px;
+    padding: 20px;
     
 }
 .LoginDiv .LoginInfo .imglg img{
@@ -127,6 +136,7 @@
     color: #376DBD;
     font-family: 'Myriad Bold Italic';
     text-align: center;
+    
 }
 
 .LoginDiv .LoginInfo p{

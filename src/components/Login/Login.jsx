@@ -27,9 +27,11 @@ const Login = () => {
     <div className='Login'>
         <div className='LoginDS'>
             <div className='LoginImg'>
-                <img src={Sheild} alt='sheild'/>
+                <div className='imgdivsheild'>
+                    <img src={Sheild} alt='sheild'/>
+                </div>
                 <h1>One Dashboard</h1>
-                <p>Connectez-vous dès maintenant pour simplifier votre gestion de données et obtenir une vue d'ensemble complète de vos performances.</p>
+                <p>Connectez-vous dès maintenant pour simplifier votre<br/> gestion de données et obtenir une vue d'ensemble<br/> complète de vos performances.</p>
             </div>
         </div>
         <div className='LoginDiv'>
