@@ -32,7 +32,7 @@ function CompactCard({ param, setExpanded }) {
       </div>
       <div className="detail">
         <Png />
-        <span>${param.value}</span>
+        <span>KDH{param.value}</span>
         <span>Dernières 24 Heures</span>
       </div>
     </motion.div>

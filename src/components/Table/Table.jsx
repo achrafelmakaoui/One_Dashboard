@@ -5,12 +5,18 @@ import FilterListRoundedIcon from '@mui/icons-material/FilterListRounded';
 import FilterListOffRoundedIcon from '@mui/icons-material/FilterListOffRounded';
 import { useRef } from "react";
 import Annee from "../Annee/Annee";
+import * as XLSX from "xlsx/xlsx";
+// import { writeXLSX } from 'xlsx';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faFileExport } from '@fortawesome/free-solid-svg-icons'
+
 function FilterData() {
   const [grpStr, setGrpStr] = useState([]);
   const [typeUsage, setTypeUsage] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
   const [MenuState, setMenuState] = useState(false);
   const [MenuState2, setMenuState2] = useState(true);
+
 
   const menu = useRef(null);
   const sidebar = useRef(null);
@@ -79,6 +85,32 @@ function FilterData() {
         setTypeUsage(typeUsage.filter((value) => value !== selectedValue));
       }
     }
+  };
+  const exportToExcel = () => {
+    const table = document.getElementById("tableau"); // Get the table element
+  
+    // Convert the table to a workbook
+    const workbook = XLSX.utils.table_to_book(table);
+  
+    // Generate Excel file
+    const excelBuffer = XLSX.write(workbook, {
+      bookType: "xlsx",
+      type: "array",
+    });
+  
+    // Create a Blob from the buffer
+    const blob = new Blob([excelBuffer], { type: "application/octet-stream" });
+  
+    // Create a temporary anchor element
+    const anchor = document.createElement("a");
+    anchor.href = URL.createObjectURL(blob);
+    anchor.download = "table.xlsx"; // Set the file name
+  
+    // Programmatically click the anchor to trigger the download
+    anchor.click();
+  
+    // Clean up the URL object
+    URL.revokeObjectURL(anchor.href);
   };
   
 
@@ -173,7 +205,7 @@ function FilterData() {
           </div>
           <div className="grp_str">
             <div className="grp_str_tit">
-              <h4>DP_Laâyoune:</h4>
+              <h4>DP Laâyoune:</h4>
             </div>
             <div className="grp_str_input">
               <div className="flx">
@@ -208,7 +240,7 @@ function FilterData() {
           </div>  
           <div className="dpgelmim">
             <div className="dpgelmim_tit">
-              <h4>DP_Guelmim:</h4>
+              <h4>DP Guelmim:</h4>
             </div>
             <div className="dpgelmim_input">
               <div className="flx">
@@ -259,7 +291,7 @@ function FilterData() {
           </div>
           <div className="dpdakhla">
             <div className="dpdakhla_tit">
-              <h4>DP_DAKHLA:</h4>
+              <h4>DP DAKHLA:</h4>
             </div>
             <div className="dpdakhla_input">
               <div className="flx">
@@ -281,6 +313,10 @@ function FilterData() {
       <br/>
       <br/>
       <br/>
+      <button onClick={exportToExcel} className="btn_export">
+        <FontAwesomeIcon icon={faFileExport} className="exporticon"/>
+        Export to Excel
+      </button>
       <br/>
       <table id="tableau" className="table sticky table-striped">
                     <thead>
@@ -378,87 +414,87 @@ function FilterData() {
                   }
         return(
             <><tr key={index}>
-              <td>{typebsmy}</td>
-                <td className="text-left">{item.type_usage}</td>
-                <td className="text-left" >{item.groupe_str_régional}</td>
-                <td className="text-center">{(item.NBK_PS_12)}</td>
-                <td className="text-center">{(item.NBK_PS)}</td>
-                <td className="text-center">{ecartNBK}</td>
-                <td className="text-center" style={{ borderRight:'1px solid rgba(28, 28, 28, 0.19)' }}>{percentageDiffNBK}</td>
-                <td className="text-center">{(item.MWH_PS_12).toLocaleString('fr-FR', {
+              <td data-label="Tension" className="text-center">{typebsmy}</td>
+                <td className="text-center" data-label="Type Usage">{item.type_usage}</td>
+                <td className="text-center"  data-label="Groupe STR">{item.groupe_str_régional}</td>
+                <td className="text-center" data-label="NBK_PS_12">{(item.NBK_PS_12)}</td>
+                <td className="text-center" data-label="NBK_PS">{(item.NBK_PS)}</td>
+                <td className="text-center" data-label="Ecart NBK">{ecartNBK}</td>
+                <td className="text-center" data-label="Percentage" style={{ borderRight:'1px solid rgba(28, 28, 28, 0.19)' }}>{percentageDiffNBK}</td>
+                <td className="text-center" data-label="MWH_PS_12">{(item.MWH_PS_12).toLocaleString('fr-FR', {
                   minimumFractionDigits: 2,
                   maximumFractionDigits: 2,
                   useGrouping: true,
                 })}</td>
-                <td className="text-center">{(item.MWH_PS).toLocaleString('fr-FR', {
+                <td className="text-center" data-label="MWH_PS">{(item.MWH_PS).toLocaleString('fr-FR', {
                   minimumFractionDigits: 2,
                   maximumFractionDigits: 2,
                   useGrouping: true,
                 })}</td>
-                <td className="text-center">{(ecartMWH)}</td>
-                <td className="text-center" style={{ borderRight:'1px solid rgba(28, 28, 28, 0.19)' }}>{percentageDiffMWH}</td>
-                <td className="text-center">{(item.KDH_PS_12).toLocaleString('fr-FR', {
+                <td className="text-center" data-label="Ecart MWH">{(ecartMWH)}</td>
+                <td className="text-center" data-label="Percentage" style={{ borderRight:'1px solid rgba(28, 28, 28, 0.19)' }}>{percentageDiffMWH}</td>
+                <td className="text-center" data-label="KDH_PS_12">{(item.KDH_PS_12).toLocaleString('fr-FR', {
                   minimumFractionDigits: 2,
                   maximumFractionDigits: 2,
                   useGrouping: true,
                 })}</td>
-                <td className="text-center">{(item.KDH_PS).toLocaleString('fr-FR', {
+                <td className="text-center" data-label="KDH_PS">{(item.KDH_PS).toLocaleString('fr-FR', {
                   minimumFractionDigits: 2,
                   maximumFractionDigits: 2,
                   useGrouping: true,
                 })}</td>
-                <td className="text-center">{(ecartKDH)}</td>
-                <td className="text-center">{percentageDiffKDH}</td>
+                <td className="text-center" data-label="Ecart KDH">{(ecartKDH)}</td>
+                <td className="text-center" data-label="Percentage">{percentageDiffKDH}</td>
               </tr>
               </>      
       )
       })}
              <tr>
-                <td colSpan='3' className='text-center' style={{ backgroundColor:'whitesmoke' }}><strong style={{ fontSize:'18px',color:'#376DBD'}}>Total</strong></td>
-                <td className='text-center'><strong>{(totalNBK_PS_12)}</strong></td>
-                <td className='text-center'><strong>{(totalNBK_PS)}</strong></td>
-                <td className='text-center'><strong>{(totalNBK_PS-totalNBK_PS_12)}</strong></td>
-                <td className='text-center' style={{ borderRight:'1px solid rgba(28, 28, 28, 0.19)' }}><strong>{(((totalNBK_PS-totalNBK_PS_12)/totalNBK_PS_12)*100).toLocaleString('fr-FR', {
+                <td colSpan='3' data-label="Total" className='text-center' style={{ backgroundColor:'whitesmoke' }}><strong style={{ fontSize:'18px',color:'#376DBD'}}>Total</strong></td>
+                <td className='text-center' data-label="Total NBK_PS_12"><strong>{(totalNBK_PS_12)}</strong></td>
+                <td className='text-center' data-label="Total NBK_PS"><strong>{(totalNBK_PS)}</strong></td>
+                <td className='text-center' data-label="Total Ecart"><strong>{(totalNBK_PS-totalNBK_PS_12)}</strong></td>
+                <td className='text-center' data-label="Total Percentage" style={{ borderRight:'1px solid rgba(28, 28, 28, 0.19)' }}><strong>{(((totalNBK_PS-totalNBK_PS_12)/totalNBK_PS_12)*100).toLocaleString('fr-FR', {
                   minimumFractionDigits: 2,
                   maximumFractionDigits: 2,
                   useGrouping: true,
                 })+'%'}</strong></td>
-                <td className='text-center'><strong>{(totalMWH_PS_12).toLocaleString('fr-FR', {
+                <td className='text-center' data-label="Total MWH_PS_12"><strong>{(totalMWH_PS_12).toLocaleString('fr-FR', {
                   minimumFractionDigits: 2,
                   maximumFractionDigits: 2,
                   useGrouping: true,
                 })}</strong></td>
-                <td className='text-center'><strong>{(totalMWH_PS).toLocaleString('fr-FR', {
+                <td className='text-center' data-label="Total MWH_PS"><strong>{(totalMWH_PS).toLocaleString('fr-FR', {
                   minimumFractionDigits: 2,
                   maximumFractionDigits: 2,
                   useGrouping: true,
                 })}</strong></td>
-                <td className='text-center'><strong>{(totalMWH_PS-totalMWH_PS_12).toLocaleString('fr-FR', {
+                <td className='text-center' data-label="Total Ecart"><strong>{(totalMWH_PS-totalMWH_PS_12).toLocaleString('fr-FR', {
                   minimumFractionDigits: 2,
                   maximumFractionDigits: 2,
                   useGrouping: true,
                 })}</strong></td>
-                <td className='text-center' style={{ borderRight:'1px solid rgba(28, 28, 28, 0.19)' }}><strong>{(((totalMWH_PS-totalMWH_PS_12)/totalMWH_PS_12)*100).toLocaleString('fr-FR', {
+                <td className='text-center' data-label="Total Percentage" style={{ borderRight:'1px solid rgba(28, 28, 28, 0.19)' }}><strong>{(((totalMWH_PS-totalMWH_PS_12)/totalMWH_PS_12)*100).toLocaleString('fr-FR', {
                   minimumFractionDigits: 2,
                   maximumFractionDigits: 2,
                   useGrouping: true,
                 })+'%'}</strong></td>
-                <td className='text-center'><strong>{(totalKDH_PS_12).toLocaleString('fr-FR', {
+                <td className='text-center' data-label="Total KDH_PS_12"><strong>{(totalKDH_PS_12).toLocaleString('fr-FR', {
                   minimumFractionDigits: 2,
                   maximumFractionDigits: 2,
                   useGrouping: true,
                 })}</strong></td>
-                <td className='text-center'><strong>{(totalKDH_PS).toLocaleString('fr-FR', {
+                <td className='text-center' data-label="Total KDH_PS"><strong>{(totalKDH_PS).toLocaleString('fr-FR', {
                   minimumFractionDigits: 2,
                   maximumFractionDigits: 2,
                   useGrouping: true,
                 })}</strong></td>
-                <td className='text-center'><strong>{(totalKDH_PS-totalKDH_PS_12).toLocaleString('fr-FR', {
+                <td className='text-center' data-label="Total Eart"><strong>{(totalKDH_PS-totalKDH_PS_12).toLocaleString('fr-FR', {
                   minimumFractionDigits: 2,
                   maximumFractionDigits: 2,
                   useGrouping: true,
                 })}</strong></td>
-                <td className='text-center'><strong>{(((totalKDH_PS-totalKDH_PS_12)/totalKDH_PS_12)*100).toLocaleString('fr-FR', {
+                <td className='text-center' data-label="Total Percentage"><strong>{(((totalKDH_PS-totalKDH_PS_12)/totalKDH_PS_12)*100).toLocaleString('fr-FR', {
                   minimumFractionDigits: 2,
                   maximumFractionDigits: 2,
                   useGrouping: true,

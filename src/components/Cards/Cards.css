@@ -3,7 +3,7 @@
   justify-content: center;
   align-items: center;
   gap: 10px;
-  padding: 190px 125px 0px 125px;
+  padding: 170px 125px 0px 125px;
 }
 .parentContainer{
   width: 100%;
@@ -22,10 +22,30 @@
     height: 9rem;
   }
 }
-
+@media screen and (max-width: 700px)
+{
+  .Cards {
+    gap: 10px;
+    padding: 100px 85px 0px 85px;
+  }
+}
+@media screen and (max-width: 500px)
+{
+  .Cards {
+    gap: 10px;
+    padding: 100px 55px 0px 55px;
+  }
+}
+@media screen and (max-width: 431px)
+{
+  .Cards {
+    gap: 10px;
+    padding: 70px 30px 0px 30px;
+  }
+}
 @media screen and (max-width: 768px)
 {
   .Cards{
-    width: 90%;
+    width: 100%;
   }
 }

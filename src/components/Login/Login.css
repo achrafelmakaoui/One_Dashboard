@@ -156,12 +156,7 @@
     font-size: 16px;
     outline: none;
   }
-  
-  
- 
-  
 
-  
   .formulaire{
     display: grid;
     justify-content: center;
@@ -297,4 +292,16 @@
     position: absolute;
     right: 0;
   }
-  
+  @media screen and (max-width: 800px){
+    .Login{
+      display: block;
+    }
+    .LoginDS{
+      width: 100%;
+     
+    }
+    .LoginDiv{
+      width: 100%;
+
+    }
+  }

@@ -103,3 +103,25 @@
 }
 
 
+@media screen and (max-width: 1148px){
+  .upload{
+    width: 100%;
+    display: block;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 90px;
+}
+.one1{
+  padding: 0px 30px;
+  max-width: 100%;
+}
+.one2{
+  padding: 0px 30px;
+  max-width: 100%;
+
+}
+.one3{
+  padding: 0px 30px;
+  width: 100%;
+}
+}

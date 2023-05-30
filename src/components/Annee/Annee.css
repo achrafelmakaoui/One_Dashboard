@@ -12,3 +12,8 @@
  
     
 }
+@media(max-width: 578px) {
+    .anneedas{
+        font-size: 20px;
+    }
+}

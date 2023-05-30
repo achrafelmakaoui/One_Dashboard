@@ -64,6 +64,7 @@
     font-family: "Myriad Bold Italic";
     color: #0077DB;
     padding-left: 25px;
+    padding-right: 25px;
     padding-top: 20px;
 }
 .UpdateIU .UpdateInputs{
@@ -153,3 +154,19 @@
     padding: 0px 8px 0px 8px;
     margin-bottom: 5px;
 }
+@media screen and (max-width: 1052px){
+    .UpdateIU{
+        width: 80%;
+    }
+  }
+  @media screen and (max-width: 680px){
+    .UpdateIU{
+        width: 95%;
+    }
+    .UpdateIU .UpdateInputs{
+        display: block;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+  }

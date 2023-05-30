@@ -96,10 +96,28 @@ table thead{
 
 #tableau{
   width: 100%;
-  margin-bottom: 307px;
+  margin-bottom: 300px;
   font-family: Arial, Helvetica, sans-serif;
 
 }
+.btn_export{
+  background-color: transparent;
+  border-radius: 5px;
+  width: 18%;
+  padding: 0px 4px;
+  height: 45px;
+  color: rgb(30, 150, 30);
+  margin-bottom: 20px;
+  border: 1px solid rgb(30, 150, 30);
+}
+.btn_export:hover{
+  background-color: rgb(30, 150, 30);
+  color: white;
+}
+.exporticon{
+  padding: 0px 8px;
+}
+
 
 .multiselect{
   width: 35%;
@@ -217,8 +235,6 @@ table thead{
 .filter .dpgelmim .dpgelmim_tit{
   font-family: 'Myriad Bold Italic';
   color: rgb(255, 255, 255);
-
-
 }
 .filter .dpgelmim .dpgelmim_input {
   display: flex;
@@ -271,4 +287,227 @@ input[type="checkbox"] {
   border: 1px solid black;
   width: 23px;
   height: 23px;
+}
+
+@media screen and (max-width: 1189px){
+  .filter .tp_usg .tp_usag_input .flx{
+    margin: 5px;
+   
+  }
+  .filter .tp_usg .tp_usag_input label{
+    margin: 2px;
+    font-family: 'Myriad Bold Italic';
+    color: rgb(255, 255, 255);
+  
+  }
+  .filter .grp_str .grp_str_input .flx{
+    margin: 5.5px;
+  }
+  .filter .grp_str .grp_str_input label{
+    margin: 2px;
+    font-family: 'Myriad Bold Italic';
+    color: rgb(255, 255, 255);
+  
+  }
+  .filter .dpgelmim .dpgelmim_input .flx{
+    margin: 5px;
+  }
+  .filter .dpgelmim .dpgelmim_input label{
+    color: rgb(255, 255, 255);
+    margin: 2px;
+    font-family: 'Myriad Bold Italic';
+  }
+  .filter .dpdakhla .dpdakhla_input .flx{
+    margin: 5px;
+  }
+  .filter .dpdakhla .dpdakhla_input label{
+    margin: 2px;
+    color: rgb(255, 255, 255);
+    font-family: 'Myriad Bold Italic';  
+  }
+}
+@media screen and (max-width: 948px){
+  .filter .tp_usg .tp_usag_input .flx{
+    margin: 2px;
+   
+  }
+  .filter .tp_usg .tp_usag_input label{
+    margin: 0px;
+    font-family: 'Myriad Bold Italic';
+    color: rgb(255, 255, 255);
+  
+  }
+  .filter .grp_str .grp_str_input .flx{
+    margin: 2.2px;
+  }
+  .filter .grp_str .grp_str_input label{
+    margin: 0px;
+    font-family: 'Myriad Bold Italic';
+    color: rgb(255, 255, 255);
+  
+  }
+  .filter .dpgelmim .dpgelmim_input .flx{
+    margin: 2px;
+  }
+  .filter .dpgelmim .dpgelmim_input label{
+    color: rgb(255, 255, 255);
+    margin: 0px;
+    font-family: 'Myriad Bold Italic';
+  }
+  .filter .dpdakhla .dpdakhla_input .flx{
+    margin: 2px;
+  }
+  .filter .dpdakhla .dpdakhla_input label{
+    margin: 0px;
+    color: rgb(255, 255, 255);
+    font-family: 'Myriad Bold Italic';  
+  }
+  .tb_ft{
+    margin-top: 2%;
+    padding: 20px 25px 0px 25px;
+    margin-bottom: 2%;
+  }
+}
+
+@media(max-width: 1189px) {
+  
+  .table thead{
+      display: none;
+  }
+  .table, .table tbody, .table tr, .table td{
+    display: block;
+    width: 100%;
+}
+.table tr{
+  margin-bottom: 10px;
+}
+.table td{
+  text-align: right;
+  padding-left: 50%;
+  text-align: right;
+  position: relative;
+}
+.table td::before{
+  content: attr(data-label);
+  position: absolute;
+  left: 0;
+  width: 50%;
+  padding-left: 15px;
+  font-size: 15px;
+  font-weight:bold ;
+  text-align: left;
+}
+}
+@media(max-width: 1126px) {
+ 
+}
+@media(max-width: 982px) {
+  .btn_export{
+    width: 22%;
+  }
+}
+@media(max-width: 818px) {
+  .btn_export{
+    width: 26%;
+  }
+}
+@media(max-width: 662px) {
+  .btn_export{
+    width: 30%;
+  }
+}
+@media(max-width: 578px) {
+  .btn_export{
+    width: 35%;
+  }
+  .tb_ft h2{ 
+    margin-bottom: 2%;
+    font-family: 'Myriad Bold Italic';
+    color: #376dbdd8;
+    font-size: 20px;
+  }
+  .tb_ft .filter_icon_on{
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+  }
+  .tb_ft .filter_icon_off{
+    width: 25px;
+    cursor: pointer;
+    height: 25px;
+  }
+}
+@media(max-width: 505px) {
+  .btn_export{
+    width: 42%;
+  }
+}
+@media(max-width: 428px) {
+  .btn_export{
+    width: 47%;
+  }
+}
+@media(max-width: 387px) {
+  .btn_export{
+    width: 54%;
+  }
+}
+
+
+@media(max-width: 791px) {
+  .filter .tp_usg .tp_usag_input .flx{
+    margin: 0px;
+   
+  }
+  .filter .tp_usg .tp_usag_input label{
+    margin: 0px;
+    font-family: 'Myriad Bold Italic';
+    color: rgb(255, 255, 255);
+    font-size: 11px;
+
+  
+  }
+  .filter .grp_str .grp_str_input .flx{
+    margin: 0px;
+  }
+  .filter .grp_str .grp_str_input label{
+    margin: 0px;
+    font-family: 'Myriad Bold Italic';
+    color: rgb(255, 255, 255);
+    font-size: 11px;
+
+  
+  }
+  .filter .dpgelmim .dpgelmim_input .flx{
+    margin: 0px;
+  }
+  .filter .dpgelmim .dpgelmim_input label{
+    color: rgb(255, 255, 255);
+    margin: 0px;
+    font-family: 'Myriad Bold Italic';
+    font-size: 11px;
+
+  }
+  .filter .dpdakhla .dpdakhla_input .flx{
+    margin: 0px;
+  }
+  .filter .dpdakhla .dpdakhla_input label{
+    margin: 0px;
+    color: rgb(255, 255, 255);
+    font-family: 'Myriad Bold Italic';
+    font-size: 11px;
+  }
+  .filter .tp_usg .tp_usag_tit h4{
+    font-size: 16px;
+  }
+  .filter .grp_str .grp_str_tit h4{
+    font-size: 16px;
+  }
+  .filter .dpgelmim .dpgelmim_tit h4{
+    font-size: 16px;
+  }
+  .filter .dpdakhla .dpdakhla_tit h4{
+    font-size: 16px;
+  }
+  
 }

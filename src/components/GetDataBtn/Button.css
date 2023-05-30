@@ -42,7 +42,7 @@
   }
 
 .btngetdata{
-    padding: 50px 95px  20px 95PX;
+    padding: 50px 60px  20px 60PX;
 }
 .btngetall{
     background-color:#376DBD;
@@ -69,6 +69,12 @@
 @media screen and (min-width: 1600px) {
   .btngetdata{
     padding: 45px 80px  20px 80PX;
+  
+  }
+}
+@media screen and (max-width: 1148px){
+  .btngetdata{
+    padding: 45px 30px  20px 30PX;
   
   }
 }

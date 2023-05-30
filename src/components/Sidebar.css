@@ -48,7 +48,7 @@ nav{
   height: 65px;
   background: #ffffff;
   padding: 0px 0px 0px 17px;
-  
+  z-index: 999;
 }
 nav .mins{
   right: 0;
@@ -96,4 +96,57 @@ nav .logo {
   color: #376DBD;
   margin-top: -10px;
   width: 10%;
+}
+.burger{
+  display: none;
+}
+@media screen and (max-width: 1055px){
+  .nav-links{
+    display: none;
+  }
+  .mins{
+    display: none;
+  }
+  .burger{
+    display: block;
+    padding: 0px 30px 0px 0px;
+  }
+  .headerMenuIcon{
+    width: 33px;
+    height: 25px;
+  }
+  .headerMenuCloseIcon{
+    width: 22px;
+    height: 22px;
+  }
+}
+@media screen and (max-width: 431px){
+  nav .logo img{
+    width: 235px;
+  }
+}
+@media screen and (max-width: 360px){
+  nav .logo img{
+    width: 200px;
+  }
+}
+.RespLinks{
+  width: 100%;
+  background: #ffffff;
+
+}
+.ulLinks li{
+  list-style-type: none;
+  padding: 10px 0px;
+}
+.ulLinks a{
+  text-decoration: none;
+  color: #4c84d7;
+  transition: 0.3s ease;
+  font-family: 'Futura Medium';
+  font-size: 19px;
+  transition: 0.5s;
+}
+.ulLinks a:hover{
+  color: #376DBD;
 }
